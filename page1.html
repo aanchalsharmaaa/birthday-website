@@ -66,7 +66,15 @@ animation:fall 3s linear infinite;
 <button onclick="cutCake()">Cut the Cake</button>
 
 <h2 id="msg"></h2>
+<audio id="music" loop>
+  <source src="Dooron.mp3" type="audio/mpeg">
+</audio>
+<script>
 
+// start music on click
+document.body.addEventListener("click", function(){
+document.getElementById("music").play();
+});
 <script>
 
 function cutCake(){
