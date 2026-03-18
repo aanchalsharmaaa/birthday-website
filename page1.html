@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cake Cutting</title>
+
+<style>
+
+body{
+background:linear-gradient(pink,purple);
+text-align:center;
+font-family:Arial;
+color:white;
+margin-top:80px;
+overflow:hidden;
+}
+
+.cake{
+font-size:120px;
+transition:0.5s;
+}
+
+button{
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:10px;
+background:white;
+cursor:pointer;
+margin-top:20px;
+}
+
+#knife{
+font-size:60px;
+position:absolute;
+left:-100px;
+top:220px;
+transition:2s;
+}
+
+.confetti{
+position:absolute;
+font-size:25px;
+animation:fall 3s linear infinite;
+}
+
+@keyframes fall{
+0%{top:-10%;}
+100%{top:100%;}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🎂 Let's Cut the Cake 🎂</h1>
+<p>My nonu was born 28 years ago today!</p>
+
+<div class="cake" id="cake">
+    <img src="delicious-chocolate-cherry-cake-white-stand.png" alt="" height="300" width="auto">
+</div>
+
+<div id="knife">🔪</div>
+
+<button onclick="cutCake()">Cut the Cake</button>
+
+<h2 id="msg"></h2>
+
+<script>
+
+function cutCake(){
+
+document.getElementById("knife").style.left="45%";
+
+setTimeout(function(){
+
+document.getElementById("cake").innerHTML="🍰 🍰";
+document.getElementById("msg").innerHTML="🎉 Happy Birthday Nonu 💖";
+
+confetti();
+
+},2000);
+
+}
+
+function confetti(){
+
+for(let i=0;i<20;i++){
+
+let c=document.createElement("div");
+
+c.innerHTML="🎉";
+
+c.className="confetti";
+
+c.style.left=Math.random()*100+"%";
+
+c.style.animationDuration=(Math.random()*3+2)+"s";
+
+document.body.appendChild(c);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
